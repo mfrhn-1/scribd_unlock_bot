@@ -9,10 +9,10 @@ bot.on("message", async (ctx) => {
   if (ctx.message.text === "/start") {
     await ctx.reply(`Hai ${name}, welcome to Scribd Unlock Bot. Silahkan kirimkan linknya.\nMade with ❤️ by @farhaneu`);
   } else {
-    const regex = /^https:\/\/id\.scribd\.com\/document\/(\d{9})\/.*/ || /^https:\/\/id\.scribd\.com\/doc\/(\d{9})\/.*/ || /^https:\/\/id\.scribd\.com\/presentation\/(\d{8})\/.*/;
+    const regex = /^https:\/\/id\.scribd\.com\/(document|doc|presentation)\/(\d{8,9})\/.*/;
     const match = ctx.message.text.match(regex);
     if (match) {
-      const url = `https://id.scribd.com/embeds/${match[1]}/content/`;
+      const url = `https://id.scribd.com/embeds/${match[2]}/content/`;
       const options = {
         reply_markup: {
           inline_keyboard: [
