@@ -14,7 +14,7 @@ bot.on("message", async (ctx) => {
 
 
   } else {
-    const regex = /^https:\/\/(id\.)?scribd\.com\/(document|doc|presentation)\/(\d{8,9})\/.*/;
+    const regex = /^https:\/\/(id\.|www\.)?scribd\.com\/(document|doc|presentation)\/(\d{8,9})\/.*/;
     const match = ctx.message.text.match(regex);
     if (match) {
       const url = `https://id.scribd.com/embeds/${match[3]}/content/`;
