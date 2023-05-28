@@ -8,6 +8,11 @@ bot.on("message", async (ctx) => {
   const name = ctx.from.first_name;
   if (ctx.message.text === "/start") {
     await ctx.reply(`Hai ${name}, welcome to Scribd Unlock Bot. Silahkan kirimkan linknya.\nMade with ❤️ by @farhaneu`);
+  } else if (messageText === "/stop") {
+
+    await ctx.reply("Bot stopped. Goodbye!");
+
+    await ctx.leaveChat();
   } else {
     const regex = /^https:\/\/(id\.)?scribd\.com\/(document|doc|presentation)\/(\d{8,9})\/.*/;
     const match = ctx.message.text.match(regex);
