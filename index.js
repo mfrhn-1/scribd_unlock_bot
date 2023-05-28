@@ -17,7 +17,7 @@ bot.on("message", async (ctx) => {
     const regex = /^https:\/\/(id\.)?scribd\.com\/(document|doc|presentation)\/(\d{8,9})\/.*/;
     const match = ctx.message.text.match(regex);
     if (match) {
-      const url = `https://id.scribd.com/embeds/${match[2]}/content/`;
+      const url = `https://id.scribd.com/embeds/${match[3]}/content/`;
       const options = {
         reply_markup: {
           inline_keyboard: [
