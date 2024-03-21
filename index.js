@@ -7,7 +7,7 @@ const bot = new Bot(process.env.BOT_TOKEN);
 bot.on("message", async (ctx) => {
   const name = ctx.from.first_name;
   if (ctx.message.text === "/start") {
-    await ctx.reply(`Hai ${name}, welcome to Scribd Unlock Bot. Silahkan kirimkan linknya.\nMade with ❤️ by @farhaneu`);
+    await ctx.reply(`Hai ${name}, welcome to Scribd Unlock Bot. Silahkan kirimkan linknya.`);
 
 
 
